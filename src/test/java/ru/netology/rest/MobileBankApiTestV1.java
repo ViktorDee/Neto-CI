@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.hasSize;
 
 class MobileBankApiTestV1 {
     @Test
-    void shouldReturnDemoAccounts() {
+    void shouldReturnRUB() {
         given()
                 .baseUri("http://localhost:9999/api/v1")
                 .when()
@@ -18,6 +18,7 @@ class MobileBankApiTestV1 {
                 .then()
                 .statusCode(200)
                 .body("[2].currency", equalTo("RUB"))
+                .body("[0].currency", equalTo("RUB"))
                 .body(matchesJsonSchemaInClasspath("accounts.schema.json"))
         ;
 
