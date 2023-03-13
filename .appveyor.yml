@@ -1,3 +1,5 @@
+  chmod +x gradlew
+
 image: Ubuntu
 
 stack: jdk 11
@@ -15,4 +17,3 @@ install:
 build_script:
   - ./gradlew test --info
     
-    chmod +x gradlew
